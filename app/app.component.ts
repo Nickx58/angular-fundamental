@@ -5,33 +5,24 @@ import { Component } from '@angular/core';
 	styleUrls: ['./app.component.scss'],
 	template: `
 		<div>
-			<button (click)="handleName()"> Change Name </button>
-			<input
-				(ngModelChange)="handleChange($event)" 
-				type="text" 
-				[ngModel]="name" />
-			<input
+			<input 
 				type="text"
-				[(ngModel)]="name" />
-			{{ name }}
+				(input)="handleChange(userName.value)"
+				[value]="name"
+				#userName /> 
+			<div *ngIf="name.length >= 2">
+				Searching for....{{ name }}
+			</div>
 		</div>
 	`
 })
 
 export class AppComponent {
 	// property binding
-	name: string = 'Nikhil'
+	name: string = '';
 
-	constructor() { }
-	// event binding examples
-	 handleInput(event: any) {
-		this.name = event.target.value;
-	}
-	// tow way data binding example
 	handleChange(value: string) {
 		this.name = value;
 	}
-	handleName() {
-		this.name = "Manu"
-	}
+
 }
