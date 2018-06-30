@@ -20,6 +20,7 @@ export class AppComponent {
 	name: string = 'Nikhil'
 
 	constructor() { }
+	// event binding examples
 	 handleInput(event: any) {
 		this.name = event.target.value;
 	}
