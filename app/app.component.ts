@@ -7,9 +7,12 @@ import { Component } from '@angular/core';
 		<div>
 			<button (click)="handleName()"> Change Name </button>
 			<input
-				(input)="handleInput($event)" 
+				(ngModelChange)="handleChange($event)" 
 				type="text" 
-				[value]="name" />
+				[ngModel]="name" />
+			<input
+				type="text"
+				[(ngModel)]="name" />
 			{{ name }}
 		</div>
 	`
@@ -23,6 +26,10 @@ export class AppComponent {
 	// event binding examples
 	 handleInput(event: any) {
 		this.name = event.target.value;
+	}
+	// tow way data binding example
+	handleChange(value: string) {
+		this.name = value;
 	}
 	handleName() {
 		this.name = "Manu"
