@@ -1,16 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { PassengerDashboard } from './containers/passenger-dashboard/passenger-dashboard.component';
+import { PassengerDashboardComponent } from './containers/passenger-dashboard/passenger-dashboard.component';
 
 @NgModule({
 	declarations: [
-		PassengerDashboard
+		PassengerDashboardComponent
 	],
 	imports: [
 		CommonModule
 	],
 	exports: [
-		PassengerDashboard
+		PassengerDashboardComponent
 	]
 })
 
