@@ -3,7 +3,8 @@ import { Component } from '@angular/core';
 interface Passenger {
 	id: number,
 	fullname: string,
-	checkedin: boolean
+	checkedIn: boolean,
+	checkedInDate?: number
 }
 
 @Component({
@@ -11,32 +12,15 @@ interface Passenger {
 	styleUrls: ['./app.component.scss'],
 	template: `
 		<div>
-			<h2> class Binding </h2>
+			<h2> Airline Passenger </h2>
 			<ul>
 				<li *ngFor="let passenger of passengers; let i = index;">
-					<span class="status" [class.checked-in]="passenger.checkedin"> </span>
+					<span class="status" [class.checked-in]="passenger.checkedIn"> </span>
 					{{ i+1 }} {{ passenger.fullname }}
-				</li>
-			</ul>
-			<h2> ngClass Binding </h2>
-			<ul>
-				<li *ngFor="let passenger of passengers; let i = index;">
-					<span class="status" [ngClass]="{'checked-in':passenger.checkedin}"> </span>
-					{{ i+1 }} {{ passenger.fullname }}
-				</li>
-			</ul>
-			<h2> style binding </h2>
-			<ul>
-				<li *ngFor="let passenger of passengers; let i = index;">
-					<span class="status" [style.backgroundColor]="(passenger.checkedin ? '#2ecc71' : '#c0392b')"> </span>
-					{{ i+1 }} {{ passenger.fullname }}
-				</li>
-			</ul>
-			<h2> ngStyle Binding </h2>
-			<ul>
-				<li *ngFor="let passenger of passengers; let i = index;">
-					<span class="status" [ngStyle]="{backgroundColor:(passenger.checkedin ? '#2ecc71' : '#c0392b')}"> </span>
-					{{ i+1 }} {{ passenger.fullname }}
+					<div class="date">
+						Checked In date:
+						{{ passenger.checkedInDate ? (passenger.checkedInDate | date: 'yMMMMd' | uppercase) : 'Not checekd in' }}
+					</div>
 				</li>
 			</ul>
 		</div>
@@ -47,22 +31,25 @@ export class AppComponent {
 	passengers: Passenger[] = [{
 		id: 1,
 		fullname: 'Nikhil',
-		checkedin: true
-	},{
+		checkedIn: true,
+		checkedInDate: 1490742000000
+	}, {
 		id: 2,
 		fullname: 'Sharma',
-		checkedin: false
-	},{
+		checkedIn: false
+	}, {
 		id: 3,
 		fullname: 'Tushar',
-		checkedin: true
-	},{
+		checkedIn: true,
+		checkedInDate: 1490742000000
+	}, {
 		id: 4,
 		fullname: 'Raman',
-		checkedin: false
-	},{
+		checkedIn: false
+	}, {
 		id: 5,
 		fullname: 'Hemu',
-		checkedin: true
+		checkedIn: true,
+		checkedInDate: 1490742000000
 	}]
 }
