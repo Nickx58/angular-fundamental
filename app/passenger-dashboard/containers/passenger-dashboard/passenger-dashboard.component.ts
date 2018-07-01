@@ -19,15 +19,15 @@ import { Passenger } from '../../models/passenger';
 
 export class PassengerDashboardComponent implements OnInit {
 	passengers: Passenger[];
-	constructor () {}
+	constructor() { }
 
-	ngOnInit () {
+	ngOnInit() {
 		this.passengers = [{
 			id: 1,
 			fullname: 'Nikhil',
 			checkedIn: true,
 			checkedInDate: 1490742000000,
-			children: [{name: 'Tanya', age: 5}]
+			children: [{ name: 'Tanya', age: 5 }]
 		}, {
 			id: 2,
 			fullname: 'Sharma',
@@ -46,15 +46,22 @@ export class PassengerDashboardComponent implements OnInit {
 			fullname: 'Hemu',
 			checkedIn: true,
 			checkedInDate: 1490742000000,
-			children: [{name: 'Tanya', age: 5}]
+			children: [{ name: 'Tanya', age: 5 }]
 		}]
 	}
 
-	handleRemove(event) {
-		console.log(event);
+	handleRemove(event: Passenger) {
+		this.passengers = this.passengers.filter((passenger: Passenger) => {
+			return passenger.id !== event.id;
+		});
 	}
 
-	handleEdit(event) {
-		console.log(event);
+	handleEdit(event: Passenger) {
+		this.passengers = this.passengers.map((passenger: Passenger) => {
+			if (passenger.id === event.id) {
+				passenger = Object.assign({}, passenger, event)
+			}
+			return passenger;
+		});
 	}
 }
