@@ -9,7 +9,9 @@ import { Passenger } from '../../models/passenger';
 			<passenger-count [items]="passengers"></passenger-count>
 			<passenger-detail 
 				*ngFor="let passenger of passengers" 
-				[detail]="passenger">
+				[detail]="passenger"
+				(remove)="handleRemove($event)"
+				(edit)="handleEdit($event)">
 			</passenger-detail>
 		</div>
 	`
@@ -46,5 +48,13 @@ export class PassengerDashboardComponent implements OnInit {
 			checkedInDate: 1490742000000,
 			children: [{name: 'Tanya', age: 5}]
 		}]
+	}
+
+	handleRemove(event) {
+		console.log(event);
+	}
+
+	handleEdit(event) {
+		console.log(event);
 	}
 }
