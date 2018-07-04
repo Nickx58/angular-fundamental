@@ -8,8 +8,8 @@ import { PassengerDashboardService } from '../../passenger-dashboard.service';
 	template: `
 		<div>
 			<passenger-count [items]="passengers"></passenger-count>
-			<passenger-detail 
-				*ngFor="let passenger of passengers" 
+			<passenger-detail
+				*ngFor="let passenger of passengers"
 				[detail]="passenger"
 				(remove)="handleRemove($event)"
 				(edit)="handleEdit($event)">
@@ -23,7 +23,9 @@ export class PassengerDashboardComponent implements OnInit {
 	constructor(private passengerService: PassengerDashboardService) { }
 
 	ngOnInit() {
-		this.passengers = this.passengerService.getPassengers();
+		this.passengerService.getPassengers().subscribe((data: Passenger[]) => {
+			this.passengers = data;
+		})
 	}
 
 	handleRemove(event: Passenger) {
