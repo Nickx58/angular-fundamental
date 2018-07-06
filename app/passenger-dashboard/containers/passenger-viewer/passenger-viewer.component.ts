@@ -7,7 +7,7 @@ import { PassengerDashboardService } from '../../passenger-dashboard.service';
 	styleUrls: ['./passenger-viewer.component.scss'],
 	template: `
 		<div>
-			{{ passenger | json }}
+			<passenger-form [detail]="passenger"></passenger-form>
 		</div>
 	`
 })
@@ -20,6 +20,6 @@ export class PassengerViewerComponent implements OnInit {
 	ngOnInit() {
 		this.passengerService
 		.getPassenger(3)
-		.subscribe((data: Passenger) => this.passenger = data;)
+		.subscribe((data: Passenger) => this.passenger = data);
 	}
 }
