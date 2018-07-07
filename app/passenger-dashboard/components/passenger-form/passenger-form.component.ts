@@ -4,29 +4,16 @@ import { Passenger } from '../../models/passenger';
 @Component({
 	selector: 'passenger-form',
 	styleUrls: ['./passenger-form.component.scss'],
-	template: `
-		<form #form="ngForm" novalidate>
-		{{ detail | json }}
-		<div>
-			Passenger name:
-			<input 
-				type="text"
-				name="fullname"
-				[ngModel]="detail?.fullname">
-		</div>
-		<div>
-		Passenger ID:
-		<input 
-			type="number"
-			name="id"
-			[ngModel]="detail?.id">
-		</div>
-		{{ form.value | json }}
-		</form>
-	`
+	templateUrl: './passenger-form.component.html'
 })
 
 export class PassengerFormComponent {
 	@Input()
 	detail: Passenger;
+
+	toggleCheckIn(checkedIn: boolean) {
+		if (checkedIn) {
+			this.detail.checkedInDate = Date.now();
+		}
+	}
 }
