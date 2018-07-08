@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Passenger } from '../../models/passenger';
 import { Baggage } from '../../models/baggage';
 
@@ -9,6 +9,10 @@ import { Baggage } from '../../models/baggage';
 })
 
 export class PassengerFormComponent {
+
+	@Output() 
+	update: EventEmitter<Passenger> = new EventEmitter<Passenger>();
+
 	@Input()
 	detail: Passenger;
 
@@ -29,6 +33,12 @@ export class PassengerFormComponent {
 	toggleCheckIn(checkedIn: boolean) {
 		if (checkedIn) {
 			this.detail.checkedInDate = Date.now();
+		}
+	}
+	
+	handleSubmit(passenger: Passenger, isValid: boolean) {
+		if (isValid) {
+			this.update.emit(passenger);
 		}
 	}
 }

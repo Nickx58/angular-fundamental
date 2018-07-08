@@ -13,11 +13,10 @@
       "baggage": ""
     },
     {
+      "fullname": "Sharma Tushar",
       "id": 3,
-      "fullname": "Tushar",
       "checkedIn": true,
-      "checkedInDate": 1490742000000,
-      "baggage": "none"
+      "baggage": "hand-only"
     },
     {
       "id": 4,

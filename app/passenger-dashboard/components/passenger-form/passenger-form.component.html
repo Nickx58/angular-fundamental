@@ -1,4 +1,7 @@
-<form #form="ngForm" novalidate>
+<form 
+	#form="ngForm"
+	(ngSubmit)="handleSubmit(form.value, form.valid)" 
+	novalidate>
 	{{ detail | json }}
 	<div>
 		Passenger name:
@@ -39,19 +42,6 @@
 			type="number"
 			name="checkInDate"
 			[ngModel]="detail?.checkedInDate">
-	</div>
-	<div>
-		Luggage:
-		<select
-			name="baggage"
-			[ngModel]="detail?.baggage">
-			<option 
-				*ngFor="let item of baggage"
-				[selected]="item.key === detail?.baggage"
-				[value]="item.key">
-				{{ item.value }}
-			</option>
-		</select>
 	</div>
 	<div>
 		Luggage:
