@@ -5,14 +5,24 @@
 		<input 
 			type="text"
 			name="fullname"
+			#fullname="ngModel"
+			required
 			[ngModel]="detail?.fullname">
+		<div *ngIf="fullname.errors?.required && fullname.dirty" class="error">
+			Passenger Name is required
+		</div>
 	</div>
 	<div>
 	Passenger ID:
 	<input 
 		type="number"
 		name="id"
+		#id="ngModel"
+		required
 		[ngModel]="detail?.id">
+	<div *ngIf="id.errors?.required && id.dirty" class="error">
+		ID is required
+	</div>
 	</div>
 	<div>
 		<label>
@@ -56,4 +66,6 @@
 		</select>
 	</div>
 	{{ form.value | json }}
+	<div> Valid: {{ form.valid | json }} </div>
+	<div> In-Valid: {{ form.invalid | json }} </div>
 </form>
