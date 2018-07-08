@@ -30,5 +30,15 @@
 			name="checkInDate"
 			[ngModel]="detail?.checkedInDate">
 	</div>
+	<div>
+		Luggage:
+		<select
+			name="baggage"
+			[ngModel]="detail?.baggage">
+			<option *ngFor="let item of baggage" [value]="item.key">
+				{{ item.value }}
+			</option>
+		</select>
+	</div>
 	{{ form.value | json }}
 </form>

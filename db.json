@@ -9,18 +9,21 @@
     {
       "id": 2,
       "fullname": "Sharma",
-      "checkedIn": false
+      "checkedIn": false,
+      "baggage": ""
     },
     {
       "id": 3,
       "fullname": "Tushar",
       "checkedIn": true,
-      "checkedInDate": 1490742000000
+      "checkedInDate": 1490742000000,
+      "baggage": "none"
     },
     {
       "id": 4,
       "fullname": "Raman",
-      "checkedIn": false
+      "checkedIn": false,
+      "baggage": ""
     },
     {
       "id": 5,
