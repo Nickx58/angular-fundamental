@@ -65,7 +65,7 @@
 			</option>
 		</select>
 	</div>
-	{{ form.value | json }}
-	<div> Valid: {{ form.valid | json }} </div>
-	<div> In-Valid: {{ form.invalid | json }} </div>
+	<button type="submit" [disabled]="form.invalid">
+		Update Passenger
+	</button>
 </form>
