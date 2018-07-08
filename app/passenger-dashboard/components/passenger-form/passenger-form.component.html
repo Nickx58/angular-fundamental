@@ -35,7 +35,22 @@
 		<select
 			name="baggage"
 			[ngModel]="detail?.baggage">
-			<option *ngFor="let item of baggage" [value]="item.key">
+			<option 
+				*ngFor="let item of baggage"
+				[selected]="item.key === detail?.baggage"
+				[value]="item.key">
+				{{ item.value }}
+			</option>
+		</select>
+	</div>
+	<div>
+		Luggage:
+		<select
+			name="baggage"
+			[ngModel]="detail?.baggage">
+			<option
+				*ngFor="let item of baggage"
+				[ngValue]="item.key">
 				{{ item.value }}
 			</option>
 		</select>
