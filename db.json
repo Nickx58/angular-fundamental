@@ -1,8 +1,8 @@
 {
   "passengers": [
     {
+      "fullname": "Nikhil Sharma",
       "id": 1,
-      "fullname": "Nikhil",
       "checkedIn": true,
       "baggage": ""
     },
