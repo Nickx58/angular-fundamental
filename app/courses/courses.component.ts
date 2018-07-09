@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { MoshService } from './mosh.service';
+import { CoursesService } from './courses.service';
 
 @Component({
 	selector: 'app-mosh',
@@ -10,9 +10,9 @@ import { MoshService } from './mosh.service';
 	`
 })
 
-export class MoshComponent {
+export class CoursesComponent {
 	courses;
-	constructor(private service: MoshService) {
+	constructor(private service: CoursesService) {
 		this.courses = this.service.getCourses();
 	}
 }

@@ -6,15 +6,15 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 
 // components
-import { MoshComponent } from './mosh.component';
-import { MoshService } from './mosh.service'
+import { CoursesComponent } from './courses.component';
+import { CoursesService } from './courses.service'
 
 const routes: Routes = [
-	{ path: 'mosh', component: MoshComponent }
+	{ path: 'mosh', component: CoursesComponent }
 ]
 @NgModule({
 	declarations: [
-		MoshComponent
+		CoursesComponent
 	],
 	imports: [
 		CommonModule,
@@ -23,12 +23,12 @@ const routes: Routes = [
 		RouterModule.forChild(routes)
 	],
 	exports: [
-		MoshComponent
+		CoursesComponent
 	],
 	providers: [
-		MoshService
+		CoursesService
 	]
 
 })
 
-export class MoshModule { }
+export class CoursesModule { }

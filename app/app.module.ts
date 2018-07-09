@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 
 import { PassengerDashboardModule } from './passenger-dashboard/passenger-dashboard.module';
-import { MoshModule } from './mosh-udemy/mosh.module';
+import { CoursesModule } from './courses/courses.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home.component';
 import { NotFoundComponent } from './not-found.component';
@@ -20,7 +20,7 @@ const routes: Routes = [
 		FormsModule,
 		RouterModule.forRoot(routes),
 		PassengerDashboardModule,
-		MoshModule
+		CoursesModule
 	],
 	bootstrap: [
 		AppComponent
