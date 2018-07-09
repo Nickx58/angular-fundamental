@@ -38,6 +38,11 @@ export class AppComponent {
 			exact: true
 		},
 		{
+			link: '/mosh',
+			name: 'Mosh',
+			exact: true
+		},
+		{
 			link: '/oops',
 			name: '404',
 			exact: false
