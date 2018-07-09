@@ -1,0 +1,21 @@
+<form>
+	<label for="firstName">First Name</label>
+	<input 
+		ngModel
+		required
+		minlength="3"
+		pattern="nikhil"
+		name="firstName"
+		#firstName="ngModel"
+		(change)="log(firstName)"
+		id="firstName" 
+		type="text" />
+	<div *ngIf="firstName.touched && !firstName.valid">
+		<div *ngIf="firstName.errors.required">First Name is required</div>
+		<div *ngIf="firstName.errors.minlength">Mini length is 3</div>
+		<div *ngIf="firstName.errors.pattern">Pattern mismatch</div>
+	</div>
+	<label for="comment">Comment</label>
+	<textarea ngModel name="comment" id="comment" cols="10" rows="2" ></textarea>
+	<button>Submit</button>
+</form>
