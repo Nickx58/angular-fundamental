@@ -4,34 +4,7 @@ import { Passenger } from '../../models/passenger';
 @Component({
 	selector: 'passenger-detail',
 	styleUrls: ['./passenger-detail.component.scss'],
-	template: `
-		<div>
-			<span class="status" [class.checked-in]="detail.checkedIn"> </span>
-			<div *ngIf="editing">
-				<input
-					type="text"
-					[value]="detail.fullname"
-					(input)="onNameChange(name.value)"
-					#name/>
-			</div>
-			<div *ngIf="!editing">
-				{{ detail.fullname }}
-			</div>
-			<div class="date">
-				Checked In date:
-				{{ detail.checkedInDate ? (detail.checkedInDate | date: 'yMMMMd' | uppercase) : 'Not checekd in' }}
-			</div>
-			<button (click)="toggleEdit()">
-				{{ editing ? 'Done' : 'Edit' }}
-			</button>
-			<button (click)="onRemove()">
-				Remove
-			</button>
-			<button (click)="goToPassenger()">
-				View
-			</button>
-		</div>
-	`
+	templateUrl: './passenger-detail.component.html'
 })
 
 export class PassengerDetailComponent implements OnChanges {

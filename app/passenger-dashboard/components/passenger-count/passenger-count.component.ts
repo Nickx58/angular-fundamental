@@ -3,14 +3,7 @@ import { Passenger } from '../../models/passenger';
 
 @Component({
 	selector: 'passenger-count',
-	template: `
-		<div>
-			<h3> Airline Passengers </h3>
-			<div>
-				Total Checked In: {{ checkedInCount() }} / {{ items?.length }}
-			</div>
-		</div>
-	`
+	templateUrl: './passenger-count.component.html'
 })
 
 export class PassengerCountComponent {

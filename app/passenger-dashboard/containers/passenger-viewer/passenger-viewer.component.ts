@@ -7,17 +7,7 @@ import 'rxjs/add/operator/switchMap';
 @Component({
 	selector: 'passenger-viewer',
 	styleUrls: ['./passenger-viewer.component.scss'],
-	template: `
-		<div>
-			<button (click)="goBack()">
-				&lsaquo; Go back
-			</button>
-			<passenger-form 
-				[detail]="passenger"
-				(update)="onUpdatePassenger($event)">
-			</passenger-form>
-		</div>
-	`
+	templateUrl: './passenger-viewer.component.html'
 })
 
 export class PassengerViewerComponent implements OnInit {

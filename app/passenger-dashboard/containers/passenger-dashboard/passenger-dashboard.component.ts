@@ -6,18 +6,7 @@ import { PassengerDashboardService } from '../../passenger-dashboard.service';
 @Component({
 	selector: 'passenger-dashboard',
 	styleUrls: ['./passenger-dashboard.component.scss'],
-	template: `
-		<div>
-			<passenger-count [items]="passengers"></passenger-count>
-			<passenger-detail
-				*ngFor="let passenger of passengers"
-				[detail]="passenger"
-				(view)="handleView($event)"
-				(remove)="handleRemove($event)"
-				(edit)="handleEdit($event)">
-			</passenger-detail>
-		</div>
-	`
+	templateUrl: 'passenger-dashboard.component.html'
 })
 
 export class PassengerDashboardComponent implements OnInit {
