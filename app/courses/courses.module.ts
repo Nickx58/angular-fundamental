@@ -9,6 +9,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { CoursesComponent } from './courses.component';
 import { CoursesService } from './courses.service'
 import { ButtonComponent } from '../courses/components/button/button.component';
+import { TemplateFormComponent } from '../courses/components/template-form/template-form.component';
 
 const routes: Routes = [
 	{ path: 'mosh', component: CoursesComponent }
@@ -16,7 +17,8 @@ const routes: Routes = [
 @NgModule({
 	declarations: [
 		CoursesComponent,
-		ButtonComponent
+		ButtonComponent,
+		TemplateFormComponent
 	],
 	imports: [
 		CommonModule,
