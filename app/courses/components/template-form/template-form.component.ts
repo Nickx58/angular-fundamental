@@ -10,4 +10,7 @@ export class TemplateFormComponent {
 	log(x) {
 		console.log(x)
 	}
+	submit(form) {
+		console.log(form);
+	}
 }
