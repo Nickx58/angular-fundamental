@@ -7,6 +7,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 // components
 import { MoshComponent } from './mosh.component';
+import { MoshService } from './mosh.service'
 
 const routes: Routes = [
 	{ path: 'mosh', component: MoshComponent }
@@ -24,6 +25,9 @@ const routes: Routes = [
 	exports: [
 		MoshComponent
 	],
+	providers: [
+		MoshService
+	]
 
 })
 
