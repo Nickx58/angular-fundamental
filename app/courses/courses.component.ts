@@ -5,6 +5,13 @@ import { CoursesService } from './courses.service';
 	selector: 'app-mosh',
 	styleUrls: ['./courses.component.scss'],
 	template: `
+		<div *ngIf="courses.length > 0; then course else noCourse"></div>
+		<template #course>
+			<h1> Courses as Follow </h1>
+		</template>
+		<template #noCourse>
+		<h1> No course try later </h1>
+		</template>
 		<ul>
 			<li *ngFor="let course of courses">{{ course }}</li>
 		</ul>
@@ -19,7 +26,7 @@ import { CoursesService } from './courses.service';
 
 export class CoursesComponent {
 	courses;
-	isClicked: boolean = true;
+	isClicked: boolean = false;
 	email: string;
 	constructor(private service: CoursesService) {
 		this.courses = this.service.getCourses();
