@@ -8,13 +8,15 @@ import { RouterModule, Routes } from '@angular/router';
 // components
 import { CoursesComponent } from './courses.component';
 import { CoursesService } from './courses.service'
+import { ButtonComponent } from '../courses/components/button/button.component';
 
 const routes: Routes = [
 	{ path: 'mosh', component: CoursesComponent }
 ]
 @NgModule({
 	declarations: [
-		CoursesComponent
+		CoursesComponent,
+		ButtonComponent
 	],
 	imports: [
 		CommonModule,
