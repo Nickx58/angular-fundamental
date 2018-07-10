@@ -14,7 +14,7 @@ export class UsernameValidator {
 				if(control.value === 'nikhil')
 					resolve({ shouldBeUnique: true });
 				else 
-					reject(null);
+					resolve(null);
 			},2000);
 		});
 	}
