@@ -26,4 +26,9 @@ export class ReactiveFormComponent {
 		return this.form.get('password');
 	}
 
+	log() {
+		this.form.setErrors({
+			inValidLogin: true
+		});
+	}
 }

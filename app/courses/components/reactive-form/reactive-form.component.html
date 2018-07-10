@@ -1,5 +1,6 @@
 <br>
-<form [formGroup]="form">
+<form [formGroup]="form" (ngSubmit)="log()">
+	<div *ngIf="form.errors">Username or password is invalid</div>
 	<div class="form-group">
 		<label for="username">Username</label>
 		<input 
