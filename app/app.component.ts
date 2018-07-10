@@ -48,6 +48,11 @@ export class AppComponent {
 			exact: true
 		},
 		{
+			link: '/forms',
+			name: 'Form',
+			exact: true
+		},
+		{
 			link: '/oops',
 			name: '404',
 			exact: false
