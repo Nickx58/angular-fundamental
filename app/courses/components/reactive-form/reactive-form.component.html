@@ -12,6 +12,7 @@
 		<div *ngIf="username.errors.required">UserName is required</div>
 		<div *ngIf="username.errors.minlength">Mini length is 3</div>
 		<div *ngIf="username.errors.cannotContainSpace">Cannot contain spaces</div>
+		<div *ngIf="username.errors.shouldBeUnique">Username should be unique</div>
 	</div>
 	<div class="form-group">
 		<label for="password">Password</label>
