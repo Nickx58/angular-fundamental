@@ -21,9 +21,6 @@
 			Pattern mismatch
 		</div>
 	</div>
-	<label for="comment">Comment</label>
-	<textarea ngModel name="comment" id="comment" cols="10" rows="2" ></textarea>
 	<input type="checkbox" ngModel name="box" />
-	<p>{{ form.value | json }}</p>
 	<button [disabled]="form.invalid">Submit</button>
 </form>
